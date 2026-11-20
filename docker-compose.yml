@@ -12,10 +12,12 @@ services:
     restart: always
 
   nginx-lb:
-  build: ./nginx
-  container_name: novapay-nginx-lb
-  ports:
-    - "8080:80"
-  depends_on:
-    - novapay-green
-  restart: always
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: novapay-nginx-lb
+    ports:
+      - "8080:80"
+    depends_on:
+      - novapay-green
+    restart: always
