@@ -12,10 +12,7 @@ services:
     restart: always
 
   nginx-lb:
-    image: nginx:alpine
     container_name: novapay-nginx-lb
-    volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     ports:
       - "8080:80"
     depends_on:
